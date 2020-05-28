@@ -73,3 +73,4 @@ removeNote(id) {
 
 }
 
+module.exports = new Store();
