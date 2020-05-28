@@ -16,3 +16,25 @@ router.get("/notes", function(req, res) {
 
 //post route function 
 
+router.post("/notes", (req, res) => {
+    store
+        .addNote(req.body)
+        .then((notes) => res.json(note))
+        .catch(err => res.status(500).json(err));
+});
+
+
+//this is a fucntion to delete notes 
+
+router.delete("/notes/:id", function(req, res) {
+
+    store
+        .removeNote(req.params.id)
+        .then(() => res.json({ ok: true }))
+        .catch(err => res.status(500).json(err));
+
+});
+
+module.exports = router;
+
+
