@@ -1,4 +1,4 @@
-const router = require("exrpess").Router();
+const router = require("express").Router();
 const store = require("../db/store");
 
 //get function to get the notes 
